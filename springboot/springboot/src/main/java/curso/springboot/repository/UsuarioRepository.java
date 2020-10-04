@@ -13,5 +13,10 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 	
 	@Query("select u from Usuario u where u.login = ?1")
 	Usuario findUserByLogin(String login);
+	
+	/*
+	 * tenho que ter um método para inserir novo usuários_role com id do 
+	 * usuário e role 2 para USER
+	 */
 
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+<body>
+ 	<h5>pagina do usuário</h5>
+ 	
+ 	<table class="striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Login</th>
+				<!-- 
+				<th>Editar</th>
+				<th>Excluir</th>
+				 -->
+			</tr>
+		</thead>
+		<tr>
+			<td th:text="${usuario.id}"></td>
+			<td th:text="${usuario.login}"></td>
+			
+			<!-- 
+			<td><a
+				th:href="@{/editarpessoa/{idpessoa}(idpessoa=${pessoa.id})}">Editar</a>
+			</td>
+			<td><a
+				th:href="@{/removerpessoa/{idpessoa}(idpessoa=${pessoa.id})}">Excluir</a>
+			</td>
+			 -->
+			
+		</tr>
+	</table>
+ 	
+ 	
+</body>
+</html>

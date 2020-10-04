@@ -40,7 +40,7 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter{
 	}
 	
 	
-	@Override // Cria autenticação do usuário com banco de dados ou em memória
+	@Override // Cria autenticação do usuário com banco de dados
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
 		auth.userDetailsService(implementacaoUserDetailsService)

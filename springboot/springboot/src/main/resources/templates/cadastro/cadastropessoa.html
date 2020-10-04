@@ -76,11 +76,11 @@ table th {
 				enctype="multipart/form-data">
 
 				<div class="row">
-					<div class="input-fiel col s6">
+					<div class="input-field col s6">
 						<label for="id" class="active">ID</label> <input name="id"
 							th:field="*{id}" id="id" readonly="readonly">
 					</div>
-					<div class="input-fiel col s6">
+					<div class="input-field col s6">
 						<label for="nome" class="active">Nome</label> <input name="nome"
 							placeholder="Inform o nome" th:field="*{nome}" id="nome"
 							class="validate" type="text">
@@ -207,7 +207,7 @@ table th {
 				id="pesquisarpessoa">
 				<div class="row">
 					<div class="input-field col s6">
-						<label for="nomepesquisa" class="active">Pesquia por nome:</label>
+						<label for="nomepesquisa" class="active">Pesquisa por nome:</label>
 						<input name="nomepesquisa" id="nomepesquisa" class="validate"
 							th:value="${nomepesquisa}">
 
@@ -266,7 +266,7 @@ table th {
 	</table>
 
 	<div class="row" style="margin-top: 30px;">
-		<center>
+		
 
 			<span th:if="${pessoas.hasPrevious()}"> <a
 				th:href="@{/pessoaspag(page=${pessoas.number-1}, size=${pessoas.size}, nomepesquisa=${nomepesquisa})}">Anterior</a>
@@ -283,7 +283,7 @@ table th {
 				th:href="@{/pessoaspag(page=${pessoas.number+1}, size=${pessoas.size}, nomepesquisa=${nomepesquisa})}">Próximo</a>
 			</span>
 
-		</center>
+		
 	</div>
 
 	<!-- Adicionando Javascript -->

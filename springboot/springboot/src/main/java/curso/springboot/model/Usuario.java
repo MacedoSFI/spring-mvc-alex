@@ -14,9 +14,12 @@ import javax.persistence.OneToMany;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 public class Usuario implements UserDetails {
+	
+	
 
 	private static final long serialVersionUID = 1L;
 
@@ -38,6 +41,10 @@ public class Usuario implements UserDetails {
 								table = "role"))
 	
 	private List<Role> roles;
+	
+	/*
+	 * ao criar novo usuario, criar nova usuarios_role 
+	 */
 	
 
 	public Long getId() {
@@ -61,7 +68,9 @@ public class Usuario implements UserDetails {
 	}
 
 	public void setSenha(String senha) {
-		this.senha = senha;
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String senhaCripto = encoder.encode(senha);// seta uma senha criptografada
+		this.senha = senhaCripto;
 	}
 
 	@Override

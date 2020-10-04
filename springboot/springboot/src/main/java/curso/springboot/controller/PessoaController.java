@@ -139,9 +139,9 @@ public class PessoaController{
 
 		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
 		modelAndView.addObject("pessoaobj", pessoa.get());
+		modelAndView.addObject("pessoas", pessoaRepository.findAll(PageRequest.of(0, 5, Sort.by("nome"))));
 		modelAndView.addObject("profissoes", profissaoRepository.findAll());
 		return modelAndView;
-		
 	}
 	
 	
@@ -195,7 +195,7 @@ public class PessoaController{
 			/*Tipo do arquivo para download ou pode ser generica application/octet-stream*/
 			response.setContentType(pessoa.getTipoFileCurriculo());
 			
-			/*Define o cabeçalho da resposta*/
+			/*Define o cabeï¿½alho da resposta*/
 			String headerKey = "Content-Disposition";
 			String headerValue = String.format("attachment; filename=\"%s\"", pessoa.getNomeFileCurriculo());
 			response.setHeader(headerKey, headerValue);
@@ -240,7 +240,7 @@ public class PessoaController{
 			}
 		}
 		
-		/*Chame o serviço que faz a geração do relatorio*/
+		/*Chame o serviï¿½o que faz a geraï¿½ï¿½o do relatorio*/
 		byte[] pdf = reportUtil.gerarRelatorio(pessoas, "pessoa", request.getServletContext());
 		
 	    /*Tamanho da resposta*/
@@ -249,7 +249,7 @@ public class PessoaController{
 		/*Definir na resposta o tipo de arquivo*/
 		response.setContentType("application/octet-stream");
 		
-		/*Definir o cabeçalho da resposta*/
+		/*Definir o cabeï¿½alho da resposta*/
 		String headerKey = "Content-Disposition";
 		String headerValue = String.format("attachment; filename=\"%s\"", "relatorio.pdf");
 		response.setHeader(headerKey, headerValue);
