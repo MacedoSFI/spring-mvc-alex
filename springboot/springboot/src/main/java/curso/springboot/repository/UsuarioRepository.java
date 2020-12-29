@@ -17,6 +17,8 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 	/*
 	 * tenho que ter um método para inserir novo usuários_role com id do 
 	 * usuário e role 2 para USER
+	 * 
+	 * 
 	 */
 
 }

@@ -26,7 +26,9 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter{
 		.disable() // Desativa as configurações padrão de memória.
 		.authorizeRequests() // Pertimi restringir acessos
 		.antMatchers(HttpMethod.GET, "/").permitAll() // Qualquer usuário acessa a pagina inicial
-		.antMatchers(HttpMethod.GET, "/cadastropessoa").hasAnyRole("ADMIN")
+		.antMatchers(HttpMethod.GET, "/cadastrousuario").permitAll() // todos podem acessar cadastrousuario
+		.antMatchers(HttpMethod.POST, "/salvarusuario").permitAll()
+		.antMatchers(HttpMethod.GET, "/cadastropessoa").permitAll()//.hasAnyRole("ADMIN")
 		.anyRequest().authenticated()
 		.and().formLogin().permitAll()// permite qualquer usuário
         .loginPage("/login")
@@ -50,7 +52,9 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter{
 	
 	@Override // Ignora URL especificas
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/materialize/**");
+		web.ignoring()
+		.antMatchers("/materialize/**")
+		.antMatchers("/teste/**");
 	}
 
 }

@@ -1,25 +1,49 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
-   <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-             
-  
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
 </head>
 <body>
-  <h1>Olá Spring Boot [Index]</h1>
-   
-   
- <a href="/cadastropessoa"> Cad Pessoa</a>
- 
- <a href="/cadastrousuario"> Cad Usuario</a>
-    
+
+	<nav>
+		<div class="nav-wrapper">
+			<div class="row">
+				<div class="col s4">
+					 <a>Spring MVC</a>
+				</div>
+				<div class="col s4">
+					<a href="/login">Login</a>
+				</div>
+				<div class="col s4">
+					<a href="/cadastrousuario">Novo usuário</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<fieldset>
+		<legend>construído com Materialize CSS</legend>
+		<br>
+		
+		
+
+		<div>
+			<a class="waves-effect waves-light btn" href="/cadastropessoa">cadastro
+				de pessoa</a>
+		</div>
+	</fieldset>
 </body>
 </html>
